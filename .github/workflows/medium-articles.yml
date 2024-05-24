@@ -23,13 +23,13 @@ jobs:
         run: |
           jq -r '.items | sort_by(.pubDate) | reverse | .[:3] | .[] | "<li><a href=\"" + .link + "\">" + .title + "</a></li>"' medium.json > articles.md
           sed -i '/<!-- MEDIUM:START -->/,/<!-- MEDIUM:END -->/{/<!-- MEDIUM:START -->/{p; r articles.md
-          }; /<!-- MEDIUM:END -->/p; d}' README.html
+          }; /<!-- MEDIUM:END -->/p; d}' README.md
 
       - name: Commit changes
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add README.html
+          git add README.md
           git commit -m 'Update Medium articles'
           git push
         env:
