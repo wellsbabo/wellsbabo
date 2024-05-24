@@ -1,0 +1,36 @@
+name: Update Medium Articles
+
+on:
+  schedule:
+    # 매일 자정에 업데이트
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Fetch Medium Articles
+        id: fetch
+        run: |
+          curl -s https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@wellsbabo > medium.json
+          cat medium.json
+
+      - name: Update README
+        run: |
+          jq -r '.items | sort_by(.pubDate) | reverse | .[:3] | .[] | "<li><a href=\"" + .link + "\">" + .title + "</a></li>"' medium.json > articles.md
+          sed -i '/<!-- MEDIUM:START -->/,/<!-- MEDIUM:END -->/{/<!-- MEDIUM:START -->/{p; r articles.md
+          }; /<!-- MEDIUM:END -->/p; d}' README.html
+
+      - name: Commit changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add README.html
+          git commit -m 'Update Medium articles'
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
