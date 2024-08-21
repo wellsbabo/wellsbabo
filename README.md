@@ -40,12 +40,6 @@
     <div style="text-align: left;"> 
         <img src="https://github-readme-stats.vercel.app/api?username=wellsbabo&bg_color=60,1944f0,f4f0f0&title_color=ffffff&text_color=ffffff"/>
         <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=wellsbabo&layout=compact&bg_color=60,1944f0,f4f0f0&title_color=ffffff&text_color=ffffff"/>
+        <a href="https://opgc.me/#/users/wellsbabo" target="_blank"><img src="https://prd-opgc-api.opgc.me/githubs/users/wellsbabo/tag/?theme=basic" /></a>
     </div> 
-</div>
-<div style="text-align: left;"> 
-    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 📚 Articles </h2> 
-    <ul>
-        <!-- MEDIUM:START -->
-        <!-- MEDIUM:END -->
-    </ul>
 </div>
