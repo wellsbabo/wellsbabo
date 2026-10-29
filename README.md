@@ -100,9 +100,9 @@ I'm now moving toward **applied AI engineering** — and I work like a **forward
 <sub>Posts are written in Korean. Updated daily from the [blog RSS](https://jungkwan.pages.dev/rss.xml).</sub>
 
 <!-- BLOG:START -->
+- [연동 분기가 몰린 300줄 메서드를 변경 이유별 5단계로 나누기](https://jungkwan.pages.dev/posts/legacy-integration-code-refactoring/) — 2026-10-28
 - [대용량 배치와 외부 연동을 안전하게 만들기: Outbox 패턴 적용기](https://jungkwan.pages.dev/posts/large-batch-external-sync-outbox-pattern/) — 2026-10-01
 - [Git submodule 충돌을 없애기 위한 Jenkins 빌드 구조 변경](https://jungkwan.pages.dev/posts/git-submodule-merge-conflict-jenkins-build/) — 2026-09-11
-- [Tomcat multipart part 제한을 설정 상향 대신 요청 구조 개선으로 해결](https://jungkwan.pages.dev/posts/tomcat-multipart-part-limit-json-refactoring/) — 2026-09-09
 <!-- BLOG:END -->
 
 ## 🎯 What I Want to Build Next
